@@ -1,0 +1,14 @@
+{
+    "weather": [
+        {
+            "id": 1,
+            "place_name": "ohio city",
+            "temperature": 25
+        },
+        {
+            "id": 2,
+            "place_name": "houston city",
+            "temperature": 28
+        }
+    ]
+}
