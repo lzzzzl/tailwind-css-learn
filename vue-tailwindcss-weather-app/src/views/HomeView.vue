@@ -11,7 +11,8 @@
           No results match your query, try a different term.
         </p>
         <template v-else>
-          <li v-for="searchResult in searchResults" :key="searchResult.id" class="py-2 cursor-pointer">
+          <li v-for="searchResult in searchResults" :key="searchResult.id" class="py-2 cursor-pointer"
+            @click="previewCity(searchResult)">
             {{ searchResult.place_name }}
           </li>
         </template>
@@ -23,6 +24,20 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const previewCity = (searchResult) => {
+  console.log(searchResult)
+  const [city, state] = searchResult.place_name.split(",");
+  router.push({
+    name: 'cityView',
+    params: { state: state, city: city },
+    query: {
+
+    }
+  })
+}
 
 const searchQuery = ref("");
 const searchResults = ref(null);
