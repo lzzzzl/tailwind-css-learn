@@ -3,12 +3,20 @@
         {
             "id": 1,
             "place_name": "Ohio, Illinois, United State",
-            "temperature": 25
+            "temperature": 25,
+            "geometry": {
+                "lat": "29°45'47.81\"N",
+                "lng": " 95°21'47.77\"W"
+            }
         },
         {
             "id": 2,
             "place_name": "Houston, Texas, United State",
-            "temperature": 28
+            "temperature": 28,
+            "geometry": {
+                "lat": "38° 27' N",
+                "lng": "80° 32' W"
+            }
         }
     ]
 }
