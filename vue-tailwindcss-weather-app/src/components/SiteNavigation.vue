@@ -81,6 +81,7 @@ const addCity = () => {
     let query = Object.assign({}, route.query);
     delete query.preview;
     router.replace({ query })
+    console.log(localStorage)
 };
 
 const modalActive = ref(null);
