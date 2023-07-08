@@ -10,8 +10,8 @@
 
 <script setup>
 import axios from "axios";
-import CityCard from './CityCard.vue';
 import { useRoute } from "vue-router";
+import CityCard from './CityCard.vue';
 
 const savedCities = ref([]);
 const getCities = async () => {
@@ -28,6 +28,9 @@ const getCities = async () => {
         });
 
         const weatherData = await Promise.all(requests);
+
+        // Flicker Delay
+        await new Promise((res) => setTimeout(res, 1000));
 
         weatherData.forEach((value, index) => {
             savedCities.value[index].weather = value.data;
