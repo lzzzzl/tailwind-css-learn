@@ -11,6 +11,7 @@
 <script setup>
 import axios from "axios";
 import CityCard from './CityCard.vue';
+import { useRoute } from "vue-router";
 
 const savedCities = ref([]);
 const getCities = async () => {
@@ -35,12 +36,12 @@ const getCities = async () => {
 };
 await getCities();
 
-const router = useRouter();
+const router = useRoute();
 const goToCityView = (city) => {
     router.push({
         name: 'cityView',
         params: { state: city.state, city: city.city },
-        query: { lat: city.coords.lat, lng: city.coords.lng },
+        query: { id: city.id, lat: city.coords.lat, lng: city.coords.lng },
     })
 };
 </script>
